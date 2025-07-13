@@ -13,29 +13,55 @@
       margin: 0;
       padding: 0;
       color: #1e293b;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: #ffffffcc;
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+      z-index: 999;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #1d4ed8;
+      font-weight: 600;
     }
 
     .container {
       max-width: 950px;
       margin: 2rem auto;
       background: #ffffff;
-      padding: 2.5rem;
+      padding: 2rem;
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease-in-out;
     }
 
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    header, section {
+      margin-bottom: 2.5rem;
     }
 
     .profile-top {
-      width: 180px;
-      height: 180px;
+      width: 160px;
+      height: 160px;
       object-fit: cover;
       border-radius: 100px;
       margin-bottom: 1rem;
       box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-in-out;
     }
 
     .profile-bottom {
@@ -48,14 +74,13 @@
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.4rem;
       color: #0f172a;
     }
 
     .subtitle {
       font-size: 1.1rem;
       color: #475569;
-      margin-bottom: 0.8rem;
     }
 
     .contact {
@@ -67,10 +92,6 @@
       color: #3b82f6;
       text-decoration: none;
       margin: 0 0.3rem;
-    }
-
-    section {
-      margin-top: 2.4rem;
     }
 
     section h2 {
@@ -100,14 +121,41 @@
       margin-top: 2rem;
       border-radius: 8px;
     }
+
+    @media screen and (max-width: 600px) {
+      .container {
+        padding: 1.2rem;
+      }
+
+      nav a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
   </style>
 </head>
 <body>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#awards">Awards</a>
+    <a href="#outside">Outside Work</a>
+    <a href="#blog">Japan Blog</a>
+  </nav>
+
   <div class="container">
-    <header>
+    <header id="about">
       <img src="top-photo.jpeg" alt="Akshat Gupta" class="profile-top" />
       <h1>Akshat Gupta</h1>
-      <p class="subtitle">MS in Computer Engineering @ UCSD | Ex-Arista | Network & Systems Enthusiast</p>
+      <p class="subtitle">Systems Engineer • Wireless Networks • Explorer</p>
+      <p>Hello! I'm Akshat — a tech-savvy systems engineer with a strong background in embedded development, network architecture, and scalable test design. I'm passionate about building resilient, vendor-agnostic systems, exploring new countries, and collecting stories from tech and travel alike. Whether it's writing secure syslog clients or understanding radio propagation models, I love learning deeply and building boldly.</p>
       <div class="contact">
         <a href="mailto:akshat.shubhra@gmail.com">akshat.shubhra@gmail.com</a> |
         <span>San Diego, CA</span> |
@@ -116,7 +164,7 @@
       </div>
     </header>
 
-    <section>
+    <section id="education">
       <h2>Education</h2>
       <p><strong>University of California, San Diego (UCSD)</strong> – MS in Computer Engineering<br>
       <em>Sept 2025 – Jul 2027</em><br>
@@ -127,7 +175,7 @@
       Relevant Courses: OOP, DSA, Computer Programming</p>
     </section>
 
-    <section>
+    <section id="skills">
       <h2>Skills</h2>
       <ul>
         <li><strong>Languages:</strong> C/C++, Golang, Python, Bash, SQL</li>
@@ -139,7 +187,7 @@
       </ul>
     </section>
 
-    <section>
+    <section id="experience">
       <h2>Experience</h2>
       <div class="job">
         <strong>Software Engineer</strong> – Arista Networks, Pune<br>
@@ -161,7 +209,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="projects">
       <h2>Projects</h2>
       <ul>
         <li><strong>ML in Environmental Forecasting</strong> – Co-authored review of 30+ ML models (R2, RMSE, MAE, F1).</li>
@@ -170,7 +218,7 @@
       </ul>
     </section>
 
-    <section>
+    <section id="awards">
       <h2>Certifications & Awards</h2>
       <ul>
         <li><strong>CleanIT Hackathon Winner</strong> – Reduced testbed load by ~45%, improved resource usage.</li>
@@ -189,7 +237,19 @@
       </ul>
     </div>
 
-    <section>
+    <section id="outside">
+      <h2>Outside Work</h2>
+      <p>When I'm not building systems or exploring networks, I love:</p>
+      <ul>
+        <li>🏋️‍♂️ Powerlifting and pushing physical limits</li>
+        <li>🌊 Swimming — especially open water and pool endurance</li>
+        <li>⌚ Collecting vintage and mechanical watches</li>
+        <li>🏸 Playing cricket competitevely and exploring new sports</li>
+        <li>🎒 Traveling, journaling, and exploring cultures through food & technology</li>
+      </ul>
+    </section>
+
+    <section id="blog">
       <h2>Japan Blog</h2>
       <img src="japan-photo.jpeg" alt="Japan Trip" class="profile-bottom" />
       <p>I recently visited Japan and wrote a short travel reflection about the experience, culture, and tech I encountered there. If you're interested in reading a casual, personal post about navigating Japan as a tech enthusiast —</p>
