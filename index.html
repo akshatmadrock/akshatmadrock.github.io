@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <style>
     :root {
       --bg: #ffffff;
@@ -37,24 +38,23 @@
       top: 0;
       background: var(--card);
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      padding: 0.5rem 0;
+      padding: 0.5rem 1rem;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
       z-index: 999;
       backdrop-filter: blur(8px);
     }
 
     nav a {
-      margin: 0 1rem;
+      margin: 0.5rem;
       text-decoration: none;
       color: var(--accent);
       font-weight: 600;
     }
 
     .toggle-mode {
-      margin-left: auto;
-      margin-right: 1rem;
       background: none;
       border: none;
       color: var(--accent);
@@ -63,61 +63,39 @@
     }
 
     .container {
-      max-width: 950px;
+      max-width: 900px;
       margin: 2rem auto;
       background: var(--card);
       padding: 2rem;
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      animation: fadeIn 1s ease-in-out;
     }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+    .timeline {
+      position: relative;
+      margin-left: 1rem;
+      padding-left: 1rem;
+      border-left: 3px solid var(--accent);
     }
 
-    header, section {
-      margin-bottom: 2.5rem;
+    .timeline-entry {
+      margin-bottom: 1.5rem;
     }
 
-    .profile-top {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 100px;
-      margin-bottom: 1rem;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-
-    .profile-bottom {
-      width: 100%;
-      max-width: 600px;
-      display: block;
-      margin: 1rem auto;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    }
-
-    h1 {
-      font-size: 2.4rem;
-      color: var(--text);
-    }
-
-    .subtitle {
+    .timeline-entry h3 {
+      margin: 0;
       font-size: 1.1rem;
       color: var(--accent);
     }
 
-    .contact {
-      font-size: 0.95rem;
+    .timeline-entry p {
+      margin: 0.3rem 0;
       color: var(--text);
     }
 
-    .contact a {
-      color: var(--accent);
-      text-decoration: none;
-      margin: 0 0.3rem;
+    section, header {
+      text-align: center;
+      margin-bottom: 2.5rem;
     }
 
     section h2 {
@@ -125,19 +103,6 @@
       padding-bottom: 0.3rem;
       color: var(--accent);
       margin-bottom: 1rem;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    li {
-      margin-bottom: 0.6rem;
-      line-height: 1.6;
-    }
-
-    .job {
-      margin-bottom: 2rem;
     }
 
     .highlight {
@@ -148,18 +113,19 @@
       border-radius: 8px;
     }
 
+    .watch-link {
+      margin-top: 1rem;
+      font-size: 1rem;
+      display: block;
+    }
+
     @media screen and (max-width: 600px) {
       .container {
         padding: 1.2rem;
       }
-
       nav a {
-        margin: 0 0.5rem;
+        margin: 0.3rem;
         font-size: 0.9rem;
-      }
-
-      h1 {
-        font-size: 1.8rem;
       }
     }
   </style>
@@ -179,9 +145,10 @@
     <a href="#awards">Awards</a>
     <a href="#outside">Outside Work</a>
     <a href="#blog">Japan Blog</a>
+    <a href="watch-wishlist.html">Watch Wishlist</a>
     <button class="toggle-mode" onclick="toggleDarkMode()">🌗</button>
   </nav>
-  <div class="container">
+  <div class="container" data-aos="fade-up">
     <header id="about">
       <img src="top-photo.jpeg" alt="Akshat Gupta" class="profile-top" />
       <h1>Akshat Gupta</h1>
@@ -217,75 +184,45 @@
         <li><strong>Analytics:</strong> R, Pandas, NumPy, Tableau, Excel</li>
       </ul>
     </section>
-
     <section id="experience">
       <h2>Experience</h2>
-      <div class="job">
-        <strong>Software Engineer</strong> – Arista Networks, Pune<br>
-        <em>Jul 2023 – Aug 2024</em>
-        <ul>
-          <li><b>Driver2.0:</b> Built vendor-agnostic WiFi driver layer, reducing chip-specific code by ~60%.</li>
-          <li><b>Secure Syslog:</b> Delivered TLS-enabled remote syslog with SHA256 & TPM certs.</li>
-          <li><b>CI & Testing:</b> Maintained Jenkins pipeline, log fingerprinting, nightly test stability (+35%).</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <strong>Associate Consultant</strong> – Indus Insights (UK Insurance Client), Gurgaon<br>
-        <em>Jan 2023 – Jun 2023</em>
-        <ul>
-          <li>Built AWS Datalake pipelines, reduced query latency by ~40%.</li>
-          <li>Automated analytics using Python, R, Tableau on legacy datasets.</li>
-        </ul>
+      <div class="timeline">
+        <div class="timeline-entry">
+          <h3>Software Engineer – Arista Networks</h3>
+          <p><em>Pune, India | Jul 2023 – Aug 2024</em></p>
+          <p>Built vendor-agnostic WiFi driver layer, TLS-based syslog, CI/CD pipelines with nightly test stability improvements.</p>
+        </div>
+        <div class="timeline-entry">
+          <h3>Associate Consultant – Indus Insights</h3>
+          <p><em>Gurgaon, India | Jan 2023 – Jun 2023</em></p>
+          <p>Built AWS Datalake pipelines and analytics dashboards for UK-based insurance client.</p>
+        </div>
       </div>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
       <ul>
-        <li><strong>ML in Environmental Forecasting</strong> – Co-authored review of 30+ ML models (R2, RMSE, MAE, F1).</li>
-        <li><strong>UAV Base Station Positioning</strong> – Analyzed 21 algorithms; improved signal coverage by 23%.</li>
-        <li><strong>IoT Applications of UAVs</strong> – Mapped top 10 IoT-UAV use cases; 40% wider sensor coverage.</li>
+        <li><strong>ML in Environmental Forecasting</strong> – <a href="https://docs.google.com/document/d/1O1vt3xwoHGcpm6ce4M5DMW9kaqMCBe35IiR-me3Zczg/edit?usp=sharing" target="_blank">Project Link</a></li>
+        <li><strong>UAV Base Station Positioning</strong> – Evaluated 21 algorithms, improved coverage by 23%.</li>
+        <li><strong>IoT Applications of UAVs</strong> – Analyzed 10+ use cases for smart cities, logistics, agriculture.</li>
       </ul>
     </section>
-
-    <section id="awards">
-      <h2>Certifications & Awards</h2>
-      <ul>
-        <li><strong>CleanIT Hackathon Winner</strong> – Reduced testbed load by ~45%, improved resource usage.</li>
-        <li><strong>CCNA – Cisco Certified Network Associate</strong> (In Progress) – Exam in Aug 2025</li>
-      </ul>
-    </section>
-
-    <div class="highlight">
-      <h2>⚙️ Additional Technical Highlights</h2>
-      <ul>
-        <li>Building a TLS-based secure syslog service on embedded BusyBox systems.</li>
-        <li>Using TPM hardware to bind certificate access for secure bootstraps.</li>
-        <li>Designed REST/gRPC-based APIs for vendor-agnostic wireless AP configurations.</li>
-        <li>Contributed to custom tooling in Jenkins CI for nightly hardware regression gates.</li>
-        <li>Currently preparing for CCNA while exploring Software-Defined Networking (SDN).</li>
-      </ul>
-    </div>
 
     <section id="outside">
       <h2>Outside Work</h2>
-      <p>When I'm not building systems or exploring networks, I love:</p>
+      <p>When I'm not building systems or exploring networks, I enjoy:</p>
       <ul>
-        <li>🏋️‍♂️ Powerlifting and pushing physical limits</li>
-        <li>🌊 Swimming — especially open water and pool endurance</li>
-        <li>⌚ Collecting vintage and mechanical watches</li>
-        <li>🏸 Playing cricket competitevely and exploring new sports</li>
-        <li>🎒 Traveling, journaling, and exploring cultures through food & technology</li>
+        <li>🏋️‍♂️ Powerlifting and strength training</li>
+        <li>🌊 Swimming and open water dives</li>
+        <li>⌚ Collecting watches – <a href="watch-wishlist.html" class="watch-link">View my Wishlist</a></li>
+        <li>🎾 Playing sports like cricket, pickleball and ping pong</li>
+        <li>✈️ Traveling to new cultures and journaling about tech + life</li>
       </ul>
     </section>
-
-    <section id="blog">
-      <h2>Japan Blog</h2>
-      <img src="japan-photo.jpeg" alt="Japan Trip" class="profile-bottom" />
-      <p>I recently visited Japan and wrote a short travel reflection about the experience, culture, and tech I encountered there. If you're interested in reading a casual, personal post about navigating Japan as a tech enthusiast —</p>
-      <p><a href="https://docs.google.com/document/d/1YyfRidjVAoPjtCne2e5crMaLKaz4PpP7wK7Wgg_AHIY/edit?usp=sharing" target="_blank">Read My Japan Blog →</a></p>
-    </section>
   </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
