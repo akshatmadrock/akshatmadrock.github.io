@@ -5,40 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Akshat Gupta | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1e293b;
+      --accent: #1d4ed8;
+      --card: #f8fafc;
+    }
+
+    body.dark-mode {
+      --bg: #0f172a;
+      --text: #f8fafc;
+      --accent: #60a5fa;
+      --card: #1e293b;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(to right, #f1f5f9, #e2e8f0);
+      background: var(--bg);
       margin: 0;
       padding: 0;
-      color: #1e293b;
+      color: var(--text);
       scroll-behavior: smooth;
+      transition: background 0.3s, color 0.3s;
     }
 
     nav {
       position: sticky;
       top: 0;
-      background: #ffffffcc;
-      backdrop-filter: blur(8px);
+      background: var(--card);
       display: flex;
       justify-content: center;
+      align-items: center;
       padding: 0.5rem 0;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
       z-index: 999;
+      backdrop-filter: blur(8px);
     }
 
     nav a {
       margin: 0 1rem;
       text-decoration: none;
-      color: #1d4ed8;
+      color: var(--accent);
       font-weight: 600;
+    }
+
+    .toggle-mode {
+      margin-left: auto;
+      margin-right: 1rem;
+      background: none;
+      border: none;
+      color: var(--accent);
+      cursor: pointer;
+      font-weight: bold;
     }
 
     .container {
       max-width: 950px;
       margin: 2rem auto;
-      background: #ffffff;
+      background: var(--card);
       padding: 2rem;
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -61,7 +88,6 @@
       border-radius: 100px;
       margin-bottom: 1rem;
       box-shadow: 0 0 8px rgba(0,0,0,0.1);
-      animation: fadeIn 1s ease-in-out;
     }
 
     .profile-bottom {
@@ -75,21 +101,21 @@
 
     h1 {
       font-size: 2.4rem;
-      color: #0f172a;
+      color: var(--text);
     }
 
     .subtitle {
       font-size: 1.1rem;
-      color: #475569;
+      color: var(--accent);
     }
 
     .contact {
       font-size: 0.95rem;
-      color: #334155;
+      color: var(--text);
     }
 
     .contact a {
-      color: #3b82f6;
+      color: var(--accent);
       text-decoration: none;
       margin: 0 0.3rem;
     }
@@ -97,7 +123,7 @@
     section h2 {
       border-bottom: 2px solid #cbd5e1;
       padding-bottom: 0.3rem;
-      color: #1d4ed8;
+      color: var(--accent);
       margin-bottom: 1rem;
     }
 
@@ -115,7 +141,7 @@
     }
 
     .highlight {
-      background: #f0f9ff;
+      background: #e0f2fe;
       border-left: 4px solid #0ea5e9;
       padding: 1rem;
       margin-top: 2rem;
@@ -137,6 +163,11 @@
       }
     }
   </style>
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </head>
 <body>
   <nav>
@@ -148,8 +179,8 @@
     <a href="#awards">Awards</a>
     <a href="#outside">Outside Work</a>
     <a href="#blog">Japan Blog</a>
+    <button class="toggle-mode" onclick="toggleDarkMode()">🌗</button>
   </nav>
-
   <div class="container">
     <header id="about">
       <img src="top-photo.jpeg" alt="Akshat Gupta" class="profile-top" />
