@@ -1,35 +1,68 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
+  font-family: 'Inter', sans-serif;
+  background: #f4f6f9;
   margin: 0;
-  padding: 2rem;
+  padding: 0;
+  color: #333;
 }
 
 .container {
-  max-width: 800px;
-  margin: auto;
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 h1 {
-  color: #0d6efd;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+  margin-bottom: 0.2rem;
+  color: #1e3a8a;
 }
 
-h2 {
-  margin-top: 2rem;
-  color: #343a40;
+.subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 0.8rem;
 }
 
-a {
-  color: #0d6efd;
+.contact {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.contact a {
+  color: #2563eb;
   text-decoration: none;
+  margin: 0 0.3rem;
 }
 
-a:hover {
-  text-decoration: underline;
+section {
+  margin-top: 2.2rem;
+}
+
+section h2 {
+  border-bottom: 2px solid #dbeafe;
+  padding-bottom: 0.3rem;
+  color: #1d4ed8;
+  margin-bottom: 1rem;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.job {
+  margin-bottom: 1.8rem;
 }
