@@ -148,6 +148,59 @@
       font-size: 1rem;
       display: block;
     }
+    /* Research Section Styling */
+    #research {
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .research-card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left;
+    }
+
+    .research-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .research-card h3 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    .research-card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .research-card .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .research-card .btn:hover {
+      background: #1e40af;
+    }
 
     @media screen and (max-width: 600px) {
       .container {
@@ -230,13 +283,41 @@
       </ul>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>ML in Environmental Forecasting</strong> – <a href="https://docs.google.com/document/d/1O1vt3xwoHGcpm6ce4M5DMW9kaqMCBe35IiR-me3Zczg/edit?usp=sharing" target="_blank">Read Project</a></li>
-        <li><strong>UAV Base Station Optimization</strong> – Improved coverage by 23% using hybrid deployment models.</li>
-        <li><strong>IoT + UAV Synergy</strong> – Enhanced real-time data relay and sensor range in testbeds.</li>
-      </ul>
+    <section id="research">
+      <h2>📚 Research Experience</h2>
+      <div class="grid">
+        
+        <div class="research-card">
+          <h3>ML in Environmental Forecasting</h3>
+          <p>Reviewed 30+ ML models for climate, air, and water forecasting. Focused on interpretability, metrics like R², RMSE, MAE, F1 Score.</p>
+          <a href="https://docs.google.com/document/d/1O1vt3xwoHGcpm6ce4M5DMW9kaqMCBe35IiR-me3Zczg/edit?usp=sharing" target="_blank" class="btn">📄 View Project</a>
+        </div>
+    
+        <div class="research-card">
+          <h3>UAV Base Station Location Optimization</h3>
+          <p>Optimized drone base station locations using Particle Swarm Optimization and 3D trajectory planning for better coverage in urban and rural zones.</p>
+          <a href="UAV%20Base%20Station%20Location%20Optimization.pdf" target="_blank" class="btn">⬇️ Download PDF</a>
+        </div>
+    
+        <div class="research-card">
+          <h3>UAV-Assisted Mobile Edge Computing (MEC)</h3>
+          <p>Explored task offloading in UAV-enabled 5G networks using Deep RL and energy-efficient offloading. Compared performance across 16 papers.</p>
+          <a href="Optimizing%20UAV-Assisted%20Mobile%20Edge%20Computing_%20Key%20Approaches%20and%20Challenges%20in%205G%20and%20IoT%20Networks.pdf" target="_blank" class="btn">⬇️ Download PDF</a>
+        </div>
+    
+        <div class="research-card">
+          <h3>Task Scheduling in 5G MEC with UAVs</h3>
+          <p>Analyzed scheduling architectures in MEC-enabled 5G networks with UAVs. Discussed tradeoffs, vehicular use cases, and future AI schedulers.</p>
+          <a href="5G_MEC_Task_Scheduling.pdf" target="_blank" class="btn">⬇️ Download PDF</a>
+        </div>
+    
+        <div class="research-card">
+          <h3>Predictive UAV Deployment using ML (WEM)</h3>
+          <p>Used Weighted Expectation Maximization for hotspot prediction and UAV placement. Compared against k-means and EM baselines.</p>
+          <a href="UAV-BS.docx" target="_blank" class="btn">⬇️ Download DOCX</a>
+        </div>
+    
+      </div>
     </section>
 
     <section id="awards">
@@ -263,7 +344,7 @@
         <li>🏋️‍♂️ Powerlifting and strength training</li>
         <li>🌊 Swimming and endurance sessions</li>
         <li>⌚ Collecting watches – <a href="watch-wishlist.html" class="watch-link">View Wishlist</a></li>
-        <li>🎾 Playing sports like badminton and ping pong</li>
+        <li>🎾 Playing sports like Cricket, Pickleball and ping pong</li>
         <li>✈️ Traveling, food journaling, tech photography</li>
       </ul>
     </section>
