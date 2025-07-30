@@ -18,7 +18,7 @@
 
     body.dark-mode {
       --bg: #0f172a;
-      --text: #f8fafc;
+      --text: #f1f5f9; /* brighter for readability */
       --accent: #60a5fa;
       --card: #1e293b;
     }
@@ -85,6 +85,20 @@
       box-shadow: 0 0 8px rgba(0,0,0,0.1);
     }
 
+    .button-link {
+      display: inline-block;
+      margin-top: 0.8rem;
+      padding: 0.5rem 1.2rem;
+      background-color: var(--accent);
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+    .button-link:hover {
+      background-color: #1e40af;
+    }
     .profile-bottom {
       width: 100%;
       max-width: 600px;
@@ -261,13 +275,18 @@
       <div class="timeline">
         <div class="timeline-entry">
           <h3>Software Engineer – Arista Networks</h3>
-          <p><em>Pune, India | Jul 2023 – Aug 2024</em></p>
+          <p><em>Pune, India | Jul 2023 – Aug 2025</em></p>
           <p>Built vendor-agnostic WiFi driver layer, TLS-based syslog, CI/CD pipelines with nightly test stability improvements.</p>
         </div>
         <div class="timeline-entry">
           <h3>Associate Consultant – Indus Insights</h3>
           <p><em>Gurgaon, India | Jan 2023 – Jun 2023</em></p>
           <p>Built AWS Datalake pipelines and analytics dashboards for UK-based insurance client.</p>
+        </div>
+        <div class="timeline-entry">
+          <h3>Software Developer Intern – LTI (Larsen & Toubro Infotech)</h3>
+          <p><em>Mumbai, India (Remote) | May 2022 – Jul 2022</em></p>
+          <p>Built high-performance SAPUI5 apps on SAP HANA; containerized deployments on AWS EC2 using Docker for 1000+ concurrent users.</p>
         </div>
       </div>
     </section>
@@ -365,7 +384,7 @@
         <li>🧠 Exploring algorithmic puzzles and Leetcode challenges in spare time</li>
         <li>🏋️‍♂️ Powerlifting and strength training</li>
         <li>🌊 Swimming and endurance sessions</li>
-        <li>⌚ Collecting watches – <a href="watch-wishlist.html" class="watch-link">View Wishlist</a></li>
+        <li>⌚ Collecting watches – <a href="watch-wishlist.html" class="button-link">View Wishlist</a></li>
         <li>🎾 Playing sports like Cricket, Pickleball, and Ping Pong</li>
         <li>✈️ Traveling, food journaling, tech photography</li>
         <li>♟️ Playing board games — especially strategy-heavy and social deduction games like Avalon, Secret Hitler, and Codenames</li>
@@ -377,7 +396,7 @@
       <h2>Japan Blog</h2>
       <img src="japan-photo.jpeg" alt="Japan Trip" class="profile-bottom" />
       <p>I recently visited Japan and wrote a travelogue reflecting on the tech culture, language barriers, and beauty of everyday systems in the country. </p>
-      <p><a href="https://docs.google.com/document/d/1YyfRidjVAoPjtCne2e5crMaLKaz4PpP7wK7Wgg_AHIY/edit?usp=sharing" target="_blank">Read My Japan Blog →</a></p>
+      <p><a href="https://docs.google.com/document/d/1YyfRidjVAoPjtCne2e5crMaLKaz4PpP7wK7Wgg_AHIY/edit?usp=sharing" target="_blank" class="button-link">📖Read My Japan Blog →</a></p>
     </section>
   </div>
 
