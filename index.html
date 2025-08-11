@@ -149,12 +149,53 @@
     }
 
     .highlight {
-      background: #e0f2fe;
-      border-left: 4px solid #0ea5e9;
+      background: var(--highlight-bg);
+      border-left: 4px solid var(--accent);
       padding: 1rem;
       margin-top: 2rem;
       border-radius: 8px;
+      color: var(--text);
       text-align: left;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1e293b;
+      --accent: #1d4ed8;
+      --card: #f8fafc;
+      --highlight-bg: #e0f2fe; /* Light blue for light mode */
+    }
+    
+    body.dark-mode {
+      --bg: #0f172a;
+      --text: #f8fafc;
+      --accent: #60a5fa;
+      --card: #1e293b;
+      --highlight-bg: #1e3a5f; /* Dark blue-gray for dark mode */
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    
+    .tech-grid span {
+      background: var(--card);
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--accent);
+      font-size: 0.9rem;
+      color: var(--text);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .tech-grid span:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     .watch-link {
@@ -254,8 +295,13 @@
     <header id="about">
       <img src="top-photo.jpeg" alt="Akshat Gupta" class="profile-top" />
       <h1>Akshat Gupta</h1>
-      <p class="subtitle">Systems Engineer • Wireless Networks • Explorer</p>
-      <p>Hello! I'm Akshat — a tech-savvy systems engineer with a strong background in embedded development, network architecture, and scalable test design. I'm passionate about building resilient, vendor-agnostic systems, exploring new countries, and collecting stories from tech and travel alike.</p>
+      <p>
+        Embedded Systems | Linux Networking | Secure Infrastructure | Quantitative Engineering  
+      </p>
+      <p>
+        I'm a systems engineer with a strong foundation in low-level programming, distributed infrastructure, and secure networking. I've worked on TLS-secure logging for embedded platforms, built vendor-agnostic Wi-Fi drivers, and optimized UAV-based compute systems.  
+      </p>
+      <p>I'm passionate about building resilient, vendor-agnostic systems, exploring new countries, and collecting stories from tech and travel alike.</p>
       <div class="contact">
         <a href="mailto:akshat.shubhra@gmail.com">akshat.shubhra@gmail.com</a> |
         <span>San Diego, CA</span> |
@@ -291,16 +337,30 @@
       </div>
     </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li><strong>Languages:</strong> C/C++, Golang, Python, Bash, SQL</li>
-        <li><strong>Networking:</strong> TCP/IP, Wi-Fi 6/7, RADIUS, NAT, Packet Analysis</li>
-        <li><strong>Systems:</strong> Linux Internals, Systemd, Kernel Debugging, TPM, Secure Boot</li>
-        <li><strong>APIs:</strong> REST, JSON-RPC, gRPC</li>
-        <li><strong>Tooling:</strong> Jenkins, Git, Docker, BusyBox, AWS</li>
-      </ul>
+    <section id="tech-stack">
+      <h2>🧰 Tech Stack Overview</h2>
+      <div class="tech-grid">
+        <!-- Programming Languages -->
+        <span><strong>Languages:</strong> C, C++, Golang, Python, Bash, SQL, R</span>
+        <!-- Systems & Networking -->
+        <span><strong>Systems:</strong> Linux Internals, Systemd, Kernel Debugging, Secure Boot, TPM</span>
+        <span><strong>Networking:</strong> TCP/IP, UDP, IPv4/IPv6, NAT, VLAN, RADIUS, DNS, DHCP, Wi-Fi 6/7</span>
+        <!-- Development Tools -->
+        <span><strong>Dev Tools:</strong> Git, Jenkins, Docker, BusyBox, GDB, perf, Valgrind, eBPF</span>
+        <!-- APIs & Frameworks -->
+        <span><strong>APIs & Frameworks:</strong> REST, gRPC, JSON-RPC, Pandas, NumPy, Matplotlib</span>
+        <!-- Cloud & Infra -->
+        <span><strong>Cloud:</strong> AWS (EC2, S3, Lambda, CloudWatch), SAP HANA, OData Services</span>
+        <!-- Databases -->
+        <span><strong>Databases:</strong> MySQL, PostgreSQL, AWS RDS, NoSQL (DynamoDB)</span>
+        <!-- Algorithmic & Quant Skills -->
+        <span><strong>Algorithmic:</strong> Data Structures, Graph Algorithms, Dynamic Programming, Complexity Analysis</span>
+        <span><strong>Quant/Trading:</strong> Market Microstructure Basics, Time-Series Analysis, Backtesting</span>
+        <!-- Automation -->
+        <span><strong>Automation:</strong> CI/CD Pipelines, Regression Analysis, Log Parsing, Zero-Touch Provisioning</span>
+      </div>
     </section>
+
 
     <section id="research">
       <h2>📚 Research Experience</h2>
