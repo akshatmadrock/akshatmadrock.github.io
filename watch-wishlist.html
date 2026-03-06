@@ -3,170 +3,332 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Akshat's Watch Wishlist</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Watch Wishlist — Akshat Gupta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(to bottom right, #f0f4f8, #e2e8f0);
-      margin: 0;
-      padding: 0;
-      color: #1e293b;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0a0a0f;
+      --surface:  #111118;
+      --card:     #16161f;
+      --border:   rgba(255,255,255,0.07);
+      --border-l: rgba(255,255,255,0.12);
+      --primary:  #6366f1;
+      --secondary:#22d3ee;
+      --gradient: linear-gradient(135deg, #6366f1, #22d3ee);
+      --text:     #f1f5f9;
+      --muted:    #64748b;
+      --dim:      #94a3b8;
+      --font-h:   'Space Grotesk', system-ui, sans-serif;
+      --font-b:   'Inter', system-ui, sans-serif;
+      --radius:   12px;
     }
 
-    .container {
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-b);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* Nav */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 0 24px;
+    }
+    .nav-inner {
       max-width: 1000px;
       margin: 0 auto;
-      padding: 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
+    .nav-logo {
+      font-family: var(--font-h);
+      font-weight: 700;
+      font-size: 1rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .nav-back {
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--text); }
 
-    header {
+    /* Hero */
+    .page-hero {
+      padding: 72px 24px 56px;
       text-align: center;
-      padding: 2rem 0;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .page-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .page-title {
+      font-family: var(--font-h);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .page-sub {
+      color: var(--dim);
+      font-size: 1rem;
+      line-height: 1.7;
     }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      color: #475569;
-    }
-
+    /* Grid */
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 24px 96px; }
     .watch-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
     }
 
+    /* Card */
     .watch-card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
       overflow: hidden;
-      padding: 1rem;
-      text-align: center;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
     }
-
-    .watch-card img {
+    .watch-card:hover {
+      border-color: var(--border-l);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.45);
+    }
+    .watch-img-wrap {
+      height: 220px;
+      overflow: hidden;
+      background: #0d0d15;
+    }
+    .watch-img-wrap img {
       width: 100%;
-      height: 250px;
+      height: 100%;
       object-fit: cover;
-      border-radius: 8px;
+      transition: transform 0.4s ease;
     }
+    .watch-card:hover .watch-img-wrap img { transform: scale(1.04); }
 
-    .watch-card h2 {
-      font-size: 1.2rem;
-      margin-top: 0.75rem;
-      color: #1d4ed8;
+    .watch-info { padding: 20px; }
+    .watch-name {
+      font-family: var(--font-h);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text);
     }
-
-    .watch-card p {
-      font-size: 0.95rem;
-      color: #334155;
-      margin-top: 0.5rem;
+    .watch-desc {
+      font-size: 0.85rem;
+      color: var(--dim);
+      line-height: 1.65;
+      margin-bottom: 14px;
     }
+    .watch-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+    .status-owned {
+      background: rgba(34,197,94,0.12);
+      color: #22c55e;
+      border: 1px solid rgba(34,197,94,0.25);
+    }
+    .status-planned {
+      background: rgba(99,102,241,0.12);
+      color: var(--primary);
+      border: 1px solid rgba(99,102,241,0.2);
+    }
+    .status-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 
+    /* Footer */
     footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
       text-align: center;
-      padding: 2rem 0;
-      font-size: 0.9rem;
-      color: #64748b;
     }
+    footer p { font-size: 0.82rem; color: var(--muted); }
+    footer a { color: var(--primary); }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>🕰️ Akshat's Dream Watch Wishlist</h1>
-      <p>A curated list of timepieces that blend history, engineering, and design — watches I aspire to own one day.</p>
-    </header>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">AG</a>
+      <a href="index.html" class="nav-back">← Back to Portfolio</a>
+    </div>
+  </nav>
 
-    <section class="watch-grid">
-      <div class="watch-card">
-        <img src="seiko_spb381j1.jpeg" alt="Seiko Prospex Marine Green GMT" />
-        <h2>Seiko Prospex Marine Green GMT - SPB381J1</h2>
-        <p>A bold yet accessible GMT dive watch with Seiko’s rugged engineering and signature green tone.</p>
-        <p><strong>Status:</strong> ✅ Owned</p>
-      </div>
-
-      <div class="watch-card">
-        <img src="longines_legend_diver.jpeg" alt="Longines Legend Diver 39mm" />
-        <h2>Longines Legend Diver 39mm</h2>
-        <p>A neo-vintage diver with elegance and heritage, in the perfect modernized size.</p>
-        <p><strong>Planned Purchase:</strong> 2028</p>
-      </div>
-
-      <div class="watch-card">
-        <img src="glashutte_panomaticlunar.jpeg" alt="Glashütte PanoMaticLunar" />
-        <h2>Glashütte PanoMaticLunar 40mm</h2>
-        <p>German precision meets asymmetrical dial aesthetics — moonphase mastery.</p>
-        <p><strong>Planned Purchase:</strong> 2032</p>
-      </div>
-
-      <div class="watch-card">
-        <img src="rolex_datejust_wimbledon.jpeg" alt="Rolex Datejust 41 Wimbledon" />
-        <h2>Rolex Datejust 41 Jubilee – Wimbledon Dial</h2>
-        <p>The iconic fluted bezel with Rolex’s sporty elegance and British charm.</p>
-        <p><strong>Planned Purchase:</strong> 2027</p>
-      </div>
-
-      <div class="watch-card">
-        <img src="breitling_navitimer_gmt.jpeg" alt="Breitling Navitimer GMT" />
-        <h2>Breitling Navitimer Automatic GMT 41</h2>
-        <p>A pilot’s toolwatch with legacy slide rule and functional GMT design.</p>
-        <p><strong>Planned Purchase:</strong> 2029</p>
-      </div>
-
-      <div class="watch-card">
-        <img src="vc_overseas.jpeg" alt="Vacheron Constantin Overseas" />
-        <h2>Vacheron Constantin Overseas</h2>
-        <p>One of the ‘Holy Trinity’ sports watches — versatile, finished to perfection.</p>
-        <p><strong>Planned Purchase:</strong> 2038</p>
-      </div>
-
-      <div class="watch-card">
-        <img src="ap_royal_oak.jpeg" alt="Audemars Piguet Royal Oak" />
-        <h2>Audemars Piguet Royal Oak</h2>
-        <p>Genta’s design icon with the tapisserie dial and integrated bracelet.</p>
-        <p><strong>Planned Purchase:</strong> 2040</p>
-      </div>
-
-      <div class="watch-card">
-        <img src="rolex_daydate_twotone.jpeg" alt="Two-Tone Rolex Day-Date" />
-        <h2>Two-Tone Rolex Day-Date</h2>
-        <p>The president’s choice — luxury and function in perfect harmony.</p>
-        <p><strong>Planned Purchase:</strong> 2035</p>
-      </div>
-
-      <div class="watch-card">
-        <img src="patek_nautilus.jpeg" alt="Patek Philippe Nautilus" />
-        <h2>Patek Philippe Nautilus</h2>
-        <p>Rare, refined, and revolutionary — the grail for any collector.</p>
-        <p><strong>Planned Purchase:</strong> 2050</p>
-      </div>
-
-      <div class="watch-card">
-        <img src="grand_seiko_snowflake.jpeg" alt="Grand Seiko Snowflake" />
-        <h2>Grand Seiko Snowflake Spring Drive</h2>
-        <p>Renowned for its dial texture and Spring Drive movement — a harmony of quartz and mechanical excellence.</p>
-        <p><strong>Planned Purchase:</strong> 2029</p>
-      </div>
-
-      <div class="watch-card">
-        <img src="cartier_tank.jpeg" alt="Cartier Tank" />
-        <h2>Cartier Tank</h2>
-        <p>A timeless dress piece inspired by WWI tanks — pure French elegance and enduring legacy.</p>
-        <p><strong>Planned Purchase:</strong> 2028</p>
-      </div>
-    </section>
-
-    <footer>
-      © 2025 Akshat Gupta — Passionate about horology, minimalism, and movement.
-    </footer>
+  <div class="page-hero">
+    <span class="page-label">Personal</span>
+    <h1 class="page-title">Watch Wishlist</h1>
+    <p class="page-sub">Timepieces I admire — for their engineering, history, and design. A list that grows slowly and on purpose.</p>
   </div>
+
+  <div class="container">
+    <div class="watch-grid">
+
+      <div class="watch-card">
+        <div class="watch-img-wrap">
+          <img src="seiko_spb381j1.jpeg" alt="Seiko Prospex Marine Green GMT" />
+        </div>
+        <div class="watch-info">
+          <h2 class="watch-name">Seiko Prospex Marine Green GMT — SPB381J1</h2>
+          <p class="watch-desc">A bold yet accessible GMT dive watch with Seiko's rugged engineering and signature marine green tone.</p>
+          <span class="watch-status status-owned"><span class="status-dot"></span>Owned</span>
+        </div>
+      </div>
+
+      <div class="watch-card">
+        <div class="watch-img-wrap">
+          <img src="longines_legend_diver.jpeg" alt="Longines Legend Diver 39mm" />
+        </div>
+        <div class="watch-info">
+          <h2 class="watch-name">Longines Legend Diver 39mm</h2>
+          <p class="watch-desc">A neo-vintage diver with elegance and heritage, modernized to a wearable 39mm.</p>
+          <span class="watch-status status-planned"><span class="status-dot"></span>Planned · 2028</span>
+        </div>
+      </div>
+
+      <div class="watch-card">
+        <div class="watch-img-wrap">
+          <img src="glashutte_panomaticlunar.jpeg" alt="Glashütte PanoMaticLunar" />
+        </div>
+        <div class="watch-info">
+          <h2 class="watch-name">Glashütte PanoMaticLunar 40mm</h2>
+          <p class="watch-desc">German precision meets asymmetrical dial aesthetics — moonphase mastery from Glashütte.</p>
+          <span class="watch-status status-planned"><span class="status-dot"></span>Planned · 2032</span>
+        </div>
+      </div>
+
+      <div class="watch-card">
+        <div class="watch-img-wrap">
+          <img src="rolex_datejust_wimbledon.jpeg" alt="Rolex Datejust 41 Wimbledon" />
+        </div>
+        <div class="watch-info">
+          <h2 class="watch-name">Rolex Datejust 41 Jubilee – Wimbledon Dial</h2>
+          <p class="watch-desc">Rolex's iconic fluted bezel, Jubilee bracelet, and the distinctive Wimbledon slate dial.</p>
+          <span class="watch-status status-planned"><span class="status-dot"></span>Planned · 2027</span>
+        </div>
+      </div>
+
+      <div class="watch-card">
+        <div class="watch-img-wrap">
+          <img src="breitling_navitimer_gmt.jpeg" alt="Breitling Navitimer GMT" />
+        </div>
+        <div class="watch-info">
+          <h2 class="watch-name">Breitling Navitimer Automatic GMT 41</h2>
+          <p class="watch-desc">A pilot's toolwatch with legacy slide rule and functional GMT — aviation heritage distilled.</p>
+          <span class="watch-status status-planned"><span class="status-dot"></span>Planned · 2029</span>
+        </div>
+      </div>
+
+      <div class="watch-card">
+        <div class="watch-img-wrap">
+          <img src="grand_seiko_snowflake.jpeg" alt="Grand Seiko Snowflake" />
+        </div>
+        <div class="watch-info">
+          <h2 class="watch-name">Grand Seiko Snowflake Spring Drive</h2>
+          <p class="watch-desc">Renowned for its textured snowflake dial and Spring Drive movement — a harmony of precision and art.</p>
+          <span class="watch-status status-planned"><span class="status-dot"></span>Planned · 2029</span>
+        </div>
+      </div>
+
+      <div class="watch-card">
+        <div class="watch-img-wrap">
+          <img src="cartier_tank.jpeg" alt="Cartier Tank" />
+        </div>
+        <div class="watch-info">
+          <h2 class="watch-name">Cartier Tank</h2>
+          <p class="watch-desc">A timeless dress piece inspired by WWI tanks — pure French elegance and enduring geometric legacy.</p>
+          <span class="watch-status status-planned"><span class="status-dot"></span>Planned · 2028</span>
+        </div>
+      </div>
+
+      <div class="watch-card">
+        <div class="watch-img-wrap">
+          <img src="vc_overseas.jpeg" alt="Vacheron Constantin Overseas" />
+        </div>
+        <div class="watch-info">
+          <h2 class="watch-name">Vacheron Constantin Overseas</h2>
+          <p class="watch-desc">One of the Holy Trinity sports watches — versatile, finished to absolute perfection.</p>
+          <span class="watch-status status-planned"><span class="status-dot"></span>Planned · 2038</span>
+        </div>
+      </div>
+
+      <div class="watch-card">
+        <div class="watch-img-wrap">
+          <img src="ap_royal_oak.jpeg" alt="Audemars Piguet Royal Oak" />
+        </div>
+        <div class="watch-info">
+          <h2 class="watch-name">Audemars Piguet Royal Oak</h2>
+          <p class="watch-desc">Genta's octagonal design icon with integrated bracelet and tapisserie dial — the original luxury sport watch.</p>
+          <span class="watch-status status-planned"><span class="status-dot"></span>Planned · 2040</span>
+        </div>
+      </div>
+
+      <div class="watch-card">
+        <div class="watch-img-wrap">
+          <img src="rolex_daydate_twotone.jpeg" alt="Two-Tone Rolex Day-Date" />
+        </div>
+        <div class="watch-info">
+          <h2 class="watch-name">Two-Tone Rolex Day-Date</h2>
+          <p class="watch-desc">The president's choice — luxury and function in perfect harmony, with the distinctive Day-Date display.</p>
+          <span class="watch-status status-planned"><span class="status-dot"></span>Planned · 2035</span>
+        </div>
+      </div>
+
+      <div class="watch-card">
+        <div class="watch-img-wrap">
+          <img src="patek_nautilus.jpeg" alt="Patek Philippe Nautilus" />
+        </div>
+        <div class="watch-info">
+          <h2 class="watch-name">Patek Philippe Nautilus</h2>
+          <p class="watch-desc">Rare, refined, and revolutionary — Genta's other masterpiece. The grail for any serious collector.</p>
+          <span class="watch-status status-planned"><span class="status-dot"></span>Planned · 2050</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>Akshat Gupta · <a href="index.html">Portfolio</a> · Horology nerd, one piece at a time</p>
+  </footer>
 </body>
 </html>

@@ -3,464 +3,777 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Akshat Gupta | Portfolio</title>
+  <title>Akshat Gupta — SWE & iOS Developer</title>
+  <meta name="description" content="Akshat Gupta — Systems engineer and iOS developer. Incoming Apple SWE Intern. Building reliable systems and AI-powered apps.">
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-  <style>
-    :root {
-      --bg: #ffffff;
-      --text: #1e293b;
-      --accent: #1d4ed8;
-      --card: #f8fafc;
-    }
-
-    body.dark-mode {
-      --bg: #0f172a;
-      --text: #f1f5f9; /* brighter for readability */
-      --accent: #60a5fa;
-      --card: #1e293b;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      margin: 0;
-      padding: 0;
-      color: var(--text);
-      scroll-behavior: smooth;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      background: var(--card);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      padding: 0.5rem 1rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
-      z-index: 999;
-      backdrop-filter: blur(8px);
-    }
-
-    nav a {
-      margin: 0.5rem;
-      text-decoration: none;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .toggle-mode {
-      background: none;
-      border: none;
-      color: var(--accent);
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      background: var(--card);
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    header, section {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
-
-    .profile-top {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 100px;
-      margin-bottom: 1rem;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-
-    .button-link {
-      display: inline-block;
-      margin-top: 0.8rem;
-      padding: 0.5rem 1.2rem;
-      background-color: var(--accent);
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
-    }
-    .button-link:hover {
-      background-color: #1e40af;
-    }
-    .profile-bottom {
-      width: 100%;
-      max-width: 600px;
-      display: block;
-      margin: 1rem auto;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    }
-
-    .timeline {
-      position: relative;
-      margin-left: 1rem;
-      padding-left: 1rem;
-      border-left: 3px solid var(--accent);
-      text-align: left;
-    }
-
-    .timeline-entry {
-      margin-bottom: 1.5rem;
-    }
-
-    .timeline-entry h3 {
-      margin: 0;
-      font-size: 1.1rem;
-      color: var(--accent);
-    }
-
-    .timeline-entry p {
-      margin: 0.3rem 0;
-      color: var(--text);
-    }
-
-    section h2 {
-      border-bottom: 2px solid #cbd5e1;
-      padding-bottom: 0.3rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-      text-align: left;
-    }
-
-    li {
-      margin-bottom: 0.6rem;
-      line-height: 1.6;
-    }
-
-    .highlight {
-      background: var(--highlight-bg);
-      border-left: 4px solid var(--accent);
-      padding: 1rem;
-      margin-top: 2rem;
-      border-radius: 8px;
-      color: var(--text);
-      text-align: left;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    :root {
-      --bg: #ffffff;
-      --text: #1e293b;
-      --accent: #1d4ed8;
-      --card: #f8fafc;
-      --highlight-bg: #e0f2fe; /* Light blue for light mode */
-    }
-    
-    body.dark-mode {
-      --bg: #0f172a;
-      --text: #f8fafc;
-      --accent: #60a5fa;
-      --card: #1e293b;
-      --highlight-bg: #1e3a5f; /* Dark blue-gray for dark mode */
-    }
-
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-    
-    .tech-grid span {
-      background: var(--card);
-      padding: 0.6rem 1rem;
-      border-radius: 8px;
-      border: 1px solid var(--accent);
-      font-size: 0.9rem;
-      color: var(--text);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    
-    .tech-grid span:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    .watch-link {
-      margin-top: 1rem;
-      font-size: 1rem;
-      display: block;
-    }
-    /* Research Section Styling */
-    #research {
-      padding: 2rem 0;
-      text-align: center;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .research-card {
-      background: var(--card);
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: left;
-    }
-
-    .research-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-    }
-
-    .research-card h3 {
-      margin-top: 0;
-      color: var(--accent);
-    }
-
-    .research-card p {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: var(--text);
-    }
-
-    .research-card .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background: var(--accent);
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-    }
-
-    .research-card .btn:hover {
-      background: #1e40af;
-    }
-
-    @media screen and (max-width: 600px) {
-      .container {
-        padding: 1.2rem;
-      }
-
-      nav a {
-        margin: 0.3rem;
-        font-size: 0.9rem;
-      }
-
-      h1 {
-        font-size: 1.8rem;
-      }
-    }
-  </style>
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#awards">Awards</a>
-    <a href="#outside">Outside Work</a>
-    <a href="#blog">Japan Blog</a>
-    <a href="watch-wishlist.html">Watch Wishlist</a>
-    <button class="toggle-mode" onclick="toggleDarkMode()">🌗</button>
-  </nav>
-  <div class="container" data-aos="fade-up">
-    <header id="about">
-      <img src="top-photo.jpeg" alt="Akshat Gupta" class="profile-top" />
-      <h1>Akshat Gupta</h1>
-      <p>
-        Embedded Systems | Linux Networking | Secure Infrastructure | Quantitative Engineering  
-      </p>
-      <p>
-        I'm a systems engineer with a strong foundation in low-level programming, distributed infrastructure, and secure networking. I've worked on TLS-secure logging for embedded platforms, built vendor-agnostic Wi-Fi drivers, and optimized UAV-based compute systems.  
-      </p>
-      <p>I'm passionate about building resilient, vendor-agnostic systems, exploring new countries, and collecting stories from tech and travel alike.</p>
-      <div class="contact">
-        <a href="mailto:akshat.shubhra@gmail.com">akshat.shubhra@gmail.com</a> |
-        <span>San Diego, CA</span> |
-        <a href="https://www.linkedin.com/in/akshat-gupta-a500761a7/" target="_blank">LinkedIn</a> |
-        <a href="RESUME_AKSHAT_GUPTA_SUMMER_2026.pdf" target="_blank">Resume</a>
+
+  <!-- ═══════════════════════════════════════ NAV ═══════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">AG</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#apps">Apps</a>
+        <a href="#projects">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
       </div>
-    </header>
-
-    <section id="education">
-      <h2>Education</h2>
-      <p><strong>University of California, San Diego (UCSD)</strong><br>MS in Computer Engineering (Sept 2025 – Jul 2027)<br><em>Relevant Courses:</em> OS, Communication Networks, Internet Algorithmics, ML, Cloud Infrastructure</p>
-      <p><strong>BITS Pilani, India</strong><br>BE in Electrical & Electronics Engineering (Aug 2019 – May 2023) – CGPA: 8.39/10</p>
-    </section>
-
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="timeline">
-        <div class="timeline-entry">
-          <h3>Software Engineer – Arista Networks</h3>
-          <p><em>Pune, India | Jul 2023 – Aug 2025</em></p>
-          <p>Built vendor-agnostic WiFi driver layer, TLS-based syslog, CI/CD pipelines with nightly test stability improvements.</p>
-        </div>
-        <div class="timeline-entry">
-          <h3>Associate Consultant – Indus Insights</h3>
-          <p><em>Gurgaon, India | Jan 2023 – Jun 2023</em></p>
-          <p>Built AWS Datalake pipelines and analytics dashboards for UK-based insurance client.</p>
-        </div>
-        <div class="timeline-entry">
-          <h3>Software Developer Intern – LTI (Larsen & Toubro Infotech)</h3>
-          <p><em>Mumbai, India (Remote) | May 2022 – Jul 2022</em></p>
-          <p>Built high-performance SAPUI5 apps on SAP HANA; containerized deployments on AWS EC2 using Docker for 1000+ concurrent users.</p>
-        </div>
+      <div class="nav-right">
+        <a href="RESUME_AKSHAT_GUPTA_SUMMER_2026.pdf" target="_blank" class="btn-outline-sm">Resume</a>
+        <a href="watch-wishlist.html" class="nav-subtle">Watches</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </section>
-
-    <section id="tech-stack">
-      <h2>🧰 Tech Stack Overview</h2>
-      <div class="tech-grid">
-        <!-- Programming Languages -->
-        <span><strong>Languages:</strong> C, C++, Golang, Python, Bash, SQL, R</span>
-        <!-- Systems & Networking -->
-        <span><strong>Systems:</strong> Linux Internals, Systemd, Kernel Debugging, Secure Boot, TPM</span>
-        <span><strong>Networking:</strong> TCP/IP, UDP, IPv4/IPv6, NAT, VLAN, RADIUS, DNS, DHCP, Wi-Fi 6/7</span>
-        <!-- Development Tools -->
-        <span><strong>Dev Tools:</strong> Git, Jenkins, Docker, BusyBox, GDB, perf, Valgrind, eBPF</span>
-        <!-- APIs & Frameworks -->
-        <span><strong>APIs & Frameworks:</strong> REST, gRPC, JSON-RPC, Pandas, NumPy, Matplotlib</span>
-        <!-- Cloud & Infra -->
-        <span><strong>Cloud:</strong> AWS (EC2, S3, Lambda, CloudWatch), SAP HANA, OData Services</span>
-        <!-- Databases -->
-        <span><strong>Databases:</strong> MySQL, PostgreSQL, AWS RDS, NoSQL (DynamoDB)</span>
-        <!-- Algorithmic & Quant Skills -->
-        <span><strong>Algorithmic:</strong> Data Structures, Graph Algorithms, Dynamic Programming, Complexity Analysis</span>
-        <span><strong>Quant/Trading:</strong> Market Microstructure Basics, Time-Series Analysis, Backtesting</span>
-        <!-- Automation -->
-        <span><strong>Automation:</strong> CI/CD Pipelines, Regression Analysis, Log Parsing, Zero-Touch Provisioning</span>
-      </div>
-    </section>
-
-
-    <section id="research">
-      <h2>📚 Research Experience</h2>
-      <div class="grid">
-        
-        <div class="research-card">
-          <h3>ML in Environmental Forecasting</h3>
-          <p>Reviewed 30+ ML models for climate, air, and water forecasting. Focused on interpretability, metrics like R², RMSE, MAE, F1 Score.</p>
-          <a href="https://docs.google.com/document/d/1O1vt3xwoHGcpm6ce4M5DMW9kaqMCBe35IiR-me3Zczg/edit?usp=sharing" target="_blank" class="btn">📄 View Project</a>
-        </div>
-    
-        <div class="research-card">
-          <h3>UAV Base Station Location Optimization</h3>
-          <p>Optimized drone base station locations using Particle Swarm Optimization and 3D trajectory planning for better coverage in urban and rural zones.</p>
-          <a href="UAV%20Base%20Station%20Location%20Optimization.pdf" target="_blank" class="btn">⬇️ Download PDF</a>
-        </div>
-    
-        <div class="research-card">
-          <h3>UAV-Assisted Mobile Edge Computing (MEC)</h3>
-          <p>Explored task offloading in UAV-enabled 5G networks using Deep RL and energy-efficient offloading. Compared performance across 16 papers.</p>
-          <a href="Optimizing%20UAV-Assisted%20Mobile%20Edge%20Computing_%20Key%20Approaches%20and%20Challenges%20in%205G%20and%20IoT%20Networks.pdf" target="_blank" class="btn">⬇️ Download PDF</a>
-        </div>
-    
-        <div class="research-card">
-          <h3>Task Scheduling in 5G MEC with UAVs</h3>
-          <p>Analyzed scheduling architectures in MEC-enabled 5G networks with UAVs. Discussed tradeoffs, vehicular use cases, and future AI schedulers.</p>
-          <a href="5G_MEC_Task_Scheduling.pdf" target="_blank" class="btn">⬇️ Download PDF</a>
-        </div>
-    
-        <div class="research-card">
-          <h3>Predictive UAV Deployment using ML (WEM)</h3>
-          <p>Used Weighted Expectation Maximization for hotspot prediction and UAV placement. Compared against k-means and EM baselines.</p>
-          <a href="UAV-BS.docx" target="_blank" class="btn">⬇️ Download DOCX</a>
-        </div>
-    
-      </div>
-    </section>
-
-    <section id="awards">
-      <h2>Certifications & Awards</h2>
-      <ul>
-        <li><strong>CleanIT Hackathon Winner</strong> – Reduced autotest infrastructure load by 45%, freeing up 30% more testbed resources at Arista Networks.</li>
-        <li><strong>CCNA – Cisco Certified Network Associate</strong> (In Progress, Exam: Aug 2025)</li>
-        <li><strong>CBSE Board Topper</strong> – Secured 95.6% in Science stream, ranking among the top performers nationally.</li>
-        <li><strong>National Gold Medalist</strong> – Awarded 1st place at the national level in Hindi Essay Writing competitions.</li>
-      </ul>
-    </section>
-
-    <div class="highlight">
-      <h2>Technical Highlights</h2>
-      <ul>
-        <li><strong>Systems & Networking:</strong> Engineered a vendor-agnostic Wi-Fi driver layer in C/C++, enabling abstraction across multiple 802.11ax/be chipsets and reducing hardware dependency by 60%. Built secure logging over TLS with TPM-backed certs and SHA256 hashing for Common Criteria-compliant transmission.</li>
-        
-        <li><strong>Distributed Infra & CI/CD:</strong> Architected Jenkins-based CI/CD pipelines with build gating, regression log analysis, device recovery workflows, and automated nightly test triggers — improving release stability and reducing code breakages by 50%.</li>
-    
-        <li><strong>Data Structures & Algorithms:</strong> Solid foundation in algorithmic thinking and competitive programming. Applied DSA knowledge in optimizing UAV placement algorithms and scheduling models for low-latency mobile edge computing tasks.</li>
-    
-        <li><strong>Quant-Ready Tooling & Modelling:</strong> Proficient in data wrangling using Python (Pandas, NumPy), SQL, and R. Developed ETL pipelines on AWS Datalake; optimized latency by 40% while handling 20+ years of legacy data for actuarial models and fraud detection analytics.</li>
-    
-        <li><strong>API & Automation:</strong> Developed scalable REST and gRPC-based configuration interfaces for distributed access points. Enabled zero-touch provisioning, automated TLS cert rollouts, and remote telemetry logging.</li>
-    
-        <li><strong>Security & Low-Level Engineering:</strong> Familiar with Linux kernel internals, Systemd, BusyBox, rsyslog, device drivers, and secure boot chains. Integrated TPM, integrity checks, and service daemons for secure embedded systems.</li>
-      </ul>
     </div>
+    <!-- Mobile overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#apps" class="mobile-link">Apps</a>
+      <a href="#projects" class="mobile-link">Work</a>
+      <a href="#experience" class="mobile-link">Experience</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+      <a href="RESUME_AKSHAT_GUPTA_SUMMER_2026.pdf" target="_blank" class="mobile-link">Resume</a>
+    </div>
+  </nav>
 
-    <section id="volunteering">
-      <h2>Volunteering Experience</h2>
-      <ul>
-        <li>🎓 Coordinated daily learning and engagement activities for 200+ underprivileged children in Pilani, nurturing both academic and personal growth.</li>
-        <li>➗ Provided tailored math tutoring and mentorship to struggling students, contributing to measurable academic improvements.</li>
-        <li>🏃‍♂️ Organized a national-level sports day event for children with special needs, collaborating with 10+ NGOs and ensuring inclusive participation.</li>
-        <li>🩸 Led a blood donation drive through the Indian Red Cross Society at BITS Pilani, resulting in the collection of over 600 units for community hospitals.</li>
-      </ul>
-    </section>
-    
-    <section id="outside">
-      <h2>Outside Work</h2>
-      <ul>
-        <li>🛡️ Participating in Capture The Flag (CTF) cybersecurity challenges for fun and skill-building</li>
-        <li>📡 Simulating network protocols and testbeds using tools like GNS3 and Packet Tracer</li>
-        <li>🧠 Exploring algorithmic puzzles and Leetcode challenges in spare time</li>
-        <li>🏋️‍♂️ Powerlifting and strength training</li>
-        <li>🌊 Swimming and endurance sessions</li>
-        <li>⌚ Collecting watches – <a href="watch-wishlist.html" class="button-link">View Wishlist</a></li>
-        <li>🎾 Playing sports like Cricket, Pickleball, and Ping Pong</li>
-        <li>✈️ Traveling, food journaling, tech photography</li>
-        <li>♟️ Playing board games — especially strategy-heavy and social deduction games like Avalon, Secret Hitler, and Codenames</li>
-        <li>📺 Enjoying trivia shows like <em>Jeopardy!</em> and <em>The Chase</em> — competing with friends for fun and bragging rights</li>
-      </ul>
-    </section>
+  <!-- ═══════════════════════════════════════ HERO ══════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="mesh-blob blob1"></div>
+      <div class="mesh-blob blob2"></div>
+      <div class="mesh-blob blob3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available · Starting Apple Internship Jun 2026
+      </div>
+      <h1 class="hero-name">Akshat Gupta</h1>
+      <div class="hero-roles" aria-live="polite">
+        <span class="role role1">Systems Engineer</span>
+        <span class="role role2">AI Application Developer</span>
+        <span class="role role3">Apple Intern '26</span>
+        <span class="role role4">iOS Developer</span>
+      </div>
+      <p class="hero-pitch">
+        Building reliable systems and AI-powered apps.<br>
+        Incoming Apple SWE Intern — RF SWAT Team, Cupertino.
+      </p>
+      <div class="hero-ctas">
+        <a href="#apps" class="btn-primary">View My Apps ↓</a>
+        <a href="RESUME_AKSHAT_GUPTA_SUMMER_2026.pdf" target="_blank" class="btn-outline">Download Resume</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/akshatmadrock" target="_blank" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/akshatmadrock" target="_blank" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:axg@ucsd.edu" aria-label="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
 
-    <section id="blog">
-      <h2>Japan Blog</h2>
-      <img src="japan-photo.jpeg" alt="Japan Trip" class="profile-bottom" />
-      <p>I recently visited Japan and wrote a travelogue reflecting on the tech culture, language barriers, and beauty of everyday systems in the country. </p>
-      <p><a href="https://docs.google.com/document/d/1YyfRidjVAoPjtCne2e5crMaLKaz4PpP7wK7Wgg_AHIY/edit?usp=sharing" target="_blank" class="button-link">📖Read My Japan Blog →</a></p>
-    </section>
-  </div>
+  <!-- ═══════════════════════════════════════ ABOUT ══════════════════════════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-photo-wrap reveal">
+          <div class="photo-glow"></div>
+          <img src="top-photo.jpeg" alt="Akshat Gupta" class="about-photo" />
+        </div>
+        <div class="about-text reveal">
+          <span class="section-label">About Me</span>
+          <h2 class="section-title">Engineer by training,<br>builder by instinct</h2>
+          <p>
+            I spent two years at <strong>Arista Networks</strong> writing systems software in C/C++ — kernel drivers, networking stacks, multi-threaded daemons. I enjoyed the rigor of it, but I always wanted to build things people could actually touch and use.
+          </p>
+          <p>
+            That drove me to UCSD's MS Computer Engineering program in 2025, and to teaching myself Swift to build <strong>RecoverAI</strong> and <strong>LeanAI</strong>. Now I'm joining <strong>Apple's RF SWAT team</strong> as a SWE Intern in summer 2026 — a role that sits right at the intersection of hardware systems and software craft.
+          </p>
+          <p>
+            I believe the best engineers right now are the ones who can integrate AI tools natively into their workflows. That's what I'm building toward.
+          </p>
+          <div class="about-chips">
+            <span class="chip">UCSD MS 2027</span>
+            <span class="chip chip-primary">Apple Intern 2026</span>
+            <span class="chip">ex-Arista Networks</span>
+            <span class="chip">BITS Pilani</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <!-- ═══════════════════════════════════════ APPS ═══════════════════════════════════════ -->
+  <section id="apps" class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Featured Apps</span>
+        <h2 class="section-title">iOS apps built from scratch</h2>
+        <p class="section-sub">Designed, engineered, and shipped solo — SwiftUI + AI backends.</p>
+      </div>
+
+      <div class="apps-grid">
+        <!-- RecoverAI Card -->
+        <div class="app-card reveal">
+          <div class="app-card-header">
+            <span class="app-tag app-tag-special">Apple Swift Student Challenge 2025</span>
+            <div class="app-card-actions">
+              <a href="https://github.com/akshatmadrock/RecoverAI" target="_blank" class="btn-ghost-sm">GitHub ↗</a>
+            </div>
+          </div>
+          <h3 class="app-title">RecoverAI</h3>
+          <p class="app-desc">An empathetic AI recovery companion for athletes. Log how you feel, and RecoverAI tells you whether to train, modify, or rest — with AI-generated rationale drawing from your soreness history and mental health data.</p>
+
+          <div class="screenshot-carousel" id="carousel-recover">
+            <div class="carousel-track" id="track-recover">
+              <div class="carousel-slide">
+                <div class="phone-mockup">
+                  <img src="assets/screenshots/SS_Verdict_Tab_AI.png" alt="AI Verdict" />
+                </div>
+                <p class="slide-caption">AI Workout Verdict</p>
+              </div>
+              <div class="carousel-slide">
+                <div class="phone-mockup">
+                  <img src="assets/screenshots/SS_Verdict_tab.png" alt="Verdict Overview" />
+                </div>
+                <p class="slide-caption">Verdict Overview</p>
+              </div>
+              <div class="carousel-slide">
+                <div class="phone-mockup">
+                  <img src="assets/screenshots/SS_Body_Tab.png" alt="Body Heatmap" />
+                </div>
+                <p class="slide-caption">Body Heatmap</p>
+              </div>
+              <div class="carousel-slide">
+                <div class="phone-mockup">
+                  <img src="assets/screenshots/SS_Mental_Health.png" alt="Mental Health" />
+                </div>
+                <p class="slide-caption">Mental Health Tracking</p>
+              </div>
+            </div>
+            <button class="carousel-btn carousel-prev" onclick="carouselPrev('recover')" aria-label="Previous">‹</button>
+            <button class="carousel-btn carousel-next" onclick="carouselNext('recover')" aria-label="Next">›</button>
+            <div class="carousel-dots" id="dots-recover">
+              <span class="dot active" onclick="carouselGoto('recover',0)"></span>
+              <span class="dot" onclick="carouselGoto('recover',1)"></span>
+              <span class="dot" onclick="carouselGoto('recover',2)"></span>
+              <span class="dot" onclick="carouselGoto('recover',3)"></span>
+            </div>
+          </div>
+
+          <div class="app-features-toggle">
+            <button class="btn-ghost-sm" onclick="toggleFeatures('recover-features')">Features ↓</button>
+          </div>
+          <div class="app-features hidden" id="recover-features">
+            <ul>
+              <li>Conversational check-in via AI chat — extracts soreness automatically</li>
+              <li>Interactive body heatmap — tap regions to log soreness zones</li>
+              <li>AI workout verdict: Train / Modify / Rest with full rationale</li>
+              <li>Mental health tracking: mood, sleep, stress, motivation</li>
+              <li>Insights dashboard with recovery trend charts</li>
+              <li>Cycle phase awareness integrated into recommendations</li>
+              <li>Full offline support via SwiftData</li>
+            </ul>
+          </div>
+
+          <div class="tech-tags">
+            <span class="tech-tag">SwiftUI</span>
+            <span class="tech-tag">SwiftData</span>
+            <span class="tech-tag">Claude API</span>
+            <span class="tech-tag">Groq API</span>
+            <span class="tech-tag">HealthKit</span>
+          </div>
+        </div>
+
+        <!-- LeanAI Card -->
+        <div class="app-card reveal">
+          <div class="app-card-header">
+            <span class="app-tag">iOS App · 2025</span>
+            <div class="app-card-actions">
+              <a href="https://github.com/akshatmadrock/LeanAI" target="_blank" class="btn-ghost-sm">GitHub ↗</a>
+            </div>
+          </div>
+          <h3 class="app-title">LeanAI</h3>
+          <p class="app-desc">AI-powered nutrition and fitness tracker built for one goal: losing fat while preserving muscle. Describe your meals in plain English — LLaMA 3.3 extracts macros automatically. HealthKit pulls your activity. CloudKit syncs your partner's progress.</p>
+
+          <div class="screenshot-carousel" id="carousel-lean">
+            <div class="leanai-placeholder">
+              <div class="placeholder-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+              <p>Screenshots coming soon</p>
+            </div>
+          </div>
+
+          <div class="app-features-toggle">
+            <button class="btn-ghost-sm" onclick="toggleFeatures('lean-features')">Features ↓</button>
+          </div>
+          <div class="app-features hidden" id="lean-features">
+            <ul>
+              <li>AI food log — describe meals in natural language, get macro breakdown</li>
+              <li>Adaptive calorie targets based on body metrics and activity level</li>
+              <li>HealthKit integration for step count, active energy, workouts</li>
+              <li>Body composition tracking: weight, body fat %, muscle mass trends</li>
+              <li>Strength testing: 1RM estimates and preservation tracking across a cut</li>
+              <li>CloudKit partner sharing for accountability</li>
+              <li>AI weekly summaries with adaptive recommendations</li>
+            </ul>
+          </div>
+
+          <div class="tech-tags">
+            <span class="tech-tag">SwiftUI</span>
+            <span class="tech-tag">SwiftData</span>
+            <span class="tech-tag">Groq (LLaMA 3.3)</span>
+            <span class="tech-tag">HealthKit</span>
+            <span class="tech-tag">CloudKit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ PROJECTS ══════════════════════════════════ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Projects & Research</span>
+        <h2 class="section-title">Selected work</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-card-top">
+            <span class="project-tag">Research · Ongoing</span>
+            <div class="project-links">
+              <span class="project-link-placeholder">WCSNG / Qualcomm</span>
+            </div>
+          </div>
+          <h3>CSI + FTM Indoor Localization</h3>
+          <p>Sub-meter indoor positioning using Wi-Fi Channel State Information and Fine Timing Measurements. Research at WCSNG lab, funded by Qualcomm.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">802.11</span><span class="tech-tag">CSI</span><span class="tech-tag">Python</span><span class="tech-tag">Signal Processing</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-card-top">
+            <span class="project-tag">Hackathon Winner</span>
+          </div>
+          <h3>CleanIT Anomaly Detection</h3>
+          <p>Real-time network anomaly detection system winning Arista Networks internal hackathon. Hybrid C++/Python architecture with adaptive thresholding.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">C++</span><span class="tech-tag">Python</span><span class="tech-tag">ML</span><span class="tech-tag">Networking</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-card-top">
+            <span class="project-tag">Course Project</span>
+          </div>
+          <h3>OFDM Transceiver — IEEE 802.11a</h3>
+          <p>Full OFDM physical layer implementation of IEEE 802.11a standard in MATLAB. Includes channel estimation, BPSK/QPSK/16-QAM modulation, and Viterbi decoding.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">MATLAB</span><span class="tech-tag">DSP</span><span class="tech-tag">802.11a</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-card-top">
+            <span class="project-tag">Research Paper</span>
+            <a href="UAV Base Station Location Optimization.pdf" target="_blank" class="project-link-btn">PDF ↗</a>
+          </div>
+          <h3>UAV Base Station Optimization</h3>
+          <p>Coverage and energy efficiency optimization for UAV-mounted base stations in emergency and rural deployments using trajectory planning algorithms.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">UAV</span><span class="tech-tag">Optimization</span><span class="tech-tag">5G</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-card-top">
+            <span class="project-tag">Research Paper</span>
+            <a href="5G_MEC_Task_Scheduling.pdf" target="_blank" class="project-link-btn">PDF ↗</a>
+          </div>
+          <h3>UAV-Assisted 5G MEC Task Scheduling</h3>
+          <p>Task offloading and scheduling framework for UAV-assisted Mobile Edge Computing in 5G and IoT networks, minimizing latency and energy consumption.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">MEC</span><span class="tech-tag">5G</span><span class="tech-tag">IoT</span><span class="tech-tag">UAV</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-card-top">
+            <span class="project-tag">Co-authored Review</span>
+          </div>
+          <h3>ML in Environmental Forecasting</h3>
+          <p>Co-authored systematic review of machine learning approaches for environmental and climate prediction, covering CNNs, RNNs, and ensemble methods.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">ML</span><span class="tech-tag">Python</span><span class="tech-tag">Research</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ EXPERIENCE ═══════════════════════════════ -->
+  <section id="experience" class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Experience</span>
+        <h2 class="section-title">Where I've worked</h2>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot dot-primary"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3>Software Engineer Intern</h3>
+                <div class="timeline-company">Apple · RF SWAT Team, Cupertino</div>
+              </div>
+              <div class="timeline-meta">
+                <span class="timeline-date">Jun – Sep 2026</span>
+                <span class="badge-upcoming">Upcoming</span>
+              </div>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Joining the RF SWAT (Software, Wireless, Architecture & Testing) team</li>
+              <li>Working at the intersection of wireless systems and software engineering</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tech-tag">Swift</span><span class="tech-tag">C/C++</span><span class="tech-tag">RF Systems</span><span class="tech-tag">Wireless</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3>Software Engineer</h3>
+                <div class="timeline-company">Arista Networks · Bangalore</div>
+              </div>
+              <span class="timeline-date">Jul 2023 – Aug 2025</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Built and maintained kernel-level device drivers and multi-threaded system daemons in C/C++ for Arista's EOS network operating system</li>
+              <li>Led development of CleanIT anomaly detection system, winning the internal hackathon; deployed in production monitoring pipelines</li>
+              <li>Designed gRPC-based microservices for inter-process communication across distributed switching hardware</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tech-tag">C/C++</span><span class="tech-tag">Linux Kernel</span><span class="tech-tag">gRPC</span><span class="tech-tag">Python</span><span class="tech-tag">TCP/IP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3>Associate Consultant</h3>
+                <div class="timeline-company">Indus Insights · Mumbai</div>
+              </div>
+              <span class="timeline-date">Jan – Jun 2023</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Delivered data-driven insights for financial services clients using Python and SQL analytics pipelines</li>
+              <li>Built automated reporting dashboards reducing manual analysis time by 40%</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span><span class="tech-tag">SQL</span><span class="tech-tag">Analytics</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3>Software Intern</h3>
+                <div class="timeline-company">LTI (L&T Infotech) · Mumbai</div>
+              </div>
+              <span class="timeline-date">May – Jul 2022</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Built SAP UI5 frontend components and REST API integrations for enterprise clients</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tech-tag">JavaScript</span><span class="tech-tag">SAP UI5</span><span class="tech-tag">REST</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ SKILLS ═══════════════════════════════════ -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Skills</span>
+        <h2 class="section-title">Tech stack</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <h4 class="skill-group-title">Languages</h4>
+          <div class="tech-tags">
+            <span class="tech-tag">C</span>
+            <span class="tech-tag">C++</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Go</span>
+            <span class="tech-tag">Swift</span>
+            <span class="tech-tag">Bash</span>
+            <span class="tech-tag">SQL</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h4 class="skill-group-title">Systems & OS</h4>
+          <div class="tech-tags">
+            <span class="tech-tag">Linux Kernel</span>
+            <span class="tech-tag">Device Drivers</span>
+            <span class="tech-tag">Multi-threading</span>
+            <span class="tech-tag">UNIX</span>
+            <span class="tech-tag">Memory Management</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h4 class="skill-group-title">Networking</h4>
+          <div class="tech-tags">
+            <span class="tech-tag">TCP/IP</span>
+            <span class="tech-tag">Wi-Fi 802.11</span>
+            <span class="tech-tag">gRPC</span>
+            <span class="tech-tag">REST</span>
+            <span class="tech-tag">Wireshark</span>
+            <span class="tech-tag">CCNA</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h4 class="skill-group-title">AI & iOS</h4>
+          <div class="tech-tags">
+            <span class="tech-tag">SwiftUI</span>
+            <span class="tech-tag">SwiftData</span>
+            <span class="tech-tag">HealthKit</span>
+            <span class="tech-tag">CloudKit</span>
+            <span class="tech-tag">Claude API</span>
+            <span class="tech-tag">Groq API</span>
+            <span class="tech-tag">LLM Integration</span>
+            <span class="tech-tag">RAG</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h4 class="skill-group-title">Infrastructure</h4>
+          <div class="tech-tags">
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Kubernetes</span>
+            <span class="tech-tag">Jenkins</span>
+            <span class="tech-tag">AWS (EC2/S3)</span>
+            <span class="tech-tag">Git</span>
+            <span class="tech-tag">Linux</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h4 class="skill-group-title">Research & Signal</h4>
+          <div class="tech-tags">
+            <span class="tech-tag">MATLAB</span>
+            <span class="tech-tag">OFDM</span>
+            <span class="tech-tag">DSP</span>
+            <span class="tech-tag">Channel Estimation</span>
+            <span class="tech-tag">Indoor Localization</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ EDUCATION ════════════════════════════════ -->
+  <section id="education" class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Education</span>
+        <h2 class="section-title">Academic background</h2>
+      </div>
+
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <div class="edu-icon edu-icon-ucsd">UC</div>
+          <div class="edu-info">
+            <h3>MS Computer Engineering</h3>
+            <div class="edu-school">UC San Diego · ECE Department</div>
+            <div class="edu-dates">Sep 2025 – Jun 2027</div>
+            <p>Focusing on wireless systems, machine learning, and signal processing. Research at WCSNG lab on Wi-Fi indoor localization. Recruiting as Apple SWE Intern from this program.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Wireless Comms</span>
+              <span class="tech-tag">ML</span>
+              <span class="tech-tag">Signal Processing</span>
+              <span class="tech-tag">Systems</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-card reveal">
+          <div class="edu-icon edu-icon-bits">BP</div>
+          <div class="edu-info">
+            <h3>BE Electrical & Electronics</h3>
+            <div class="edu-school">BITS Pilani · Pilani Campus</div>
+            <div class="edu-dates">Aug 2019 – May 2023</div>
+            <p>Graduated with 8.39/10 CGPA. Coursework in embedded systems, digital design, signals, control theory, and computer architecture. Strong CS minor through electives.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">8.39 CGPA</span>
+              <span class="tech-tag">Embedded</span>
+              <span class="tech-tag">Control Theory</span>
+              <span class="tech-tag">Digital Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ RECOGNITION ═════════════════════════════ -->
+  <section id="recognition" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Recognition</span>
+        <h2 class="section-title">Awards & certifications</h2>
+      </div>
+
+      <div class="awards-grid">
+        <div class="award-card reveal">
+          <div class="award-icon">🏆</div>
+          <h4>CleanIT Hackathon</h4>
+          <p>Winner — Arista Networks internal hackathon for anomaly detection system</p>
+        </div>
+        <div class="award-card reveal">
+          <div class="award-icon">📡</div>
+          <h4>CCNA Certified</h4>
+          <p>Cisco Certified Network Associate — Oct 2025</p>
+        </div>
+        <div class="award-card reveal">
+          <div class="award-icon">🥇</div>
+          <h4>CBSE City Topper</h4>
+          <p>City topper + National Gold Medalist in CBSE board exams</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ BEYOND ══════════════════════════════════ -->
+  <section id="beyond" class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Beyond the Code</span>
+        <h2 class="section-title">Outside the terminal</h2>
+      </div>
+
+      <div class="interests-grid">
+        <div class="interest-card reveal">
+          <div class="interest-icon">🏋️</div>
+          <h4>Powerlifting</h4>
+          <p>Squat, bench, deadlift — the other kind of systems optimization</p>
+        </div>
+        <div class="interest-card reveal">
+          <div class="interest-icon">🔐</div>
+          <h4>CTF Competitions</h4>
+          <p>Binary exploitation, reverse engineering, and cryptography challenges</p>
+        </div>
+        <a href="watch-wishlist.html" class="interest-card interest-card-link reveal">
+          <div class="interest-icon">⌚</div>
+          <h4>Watch Collecting</h4>
+          <p>Horology nerd. Currently: Seiko Prospex Marine Green GMT. See my wishlist →</p>
+        </a>
+        <div class="interest-card reveal">
+          <div class="interest-icon">🏊</div>
+          <h4>Swimming</h4>
+          <p>Open water and lap swimming — best for clearing the mental stack</p>
+        </div>
+        <div class="interest-card reveal">
+          <div class="interest-icon">🎲</div>
+          <h4>Board Games</h4>
+          <p>Settlers, Ticket to Ride, Wingspan — strategic thinking beyond code</p>
+        </div>
+        <div class="interest-card reveal">
+          <div class="interest-icon">✈️</div>
+          <h4>Travel</h4>
+          <p>Japan 2024 was the highlight. Building the list for what's next.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ CONTACT ══════════════════════════════════ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="contact-center reveal">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">Let's talk</h2>
+        <p class="contact-sub">I'm not actively job hunting right now (Apple internship locked in), but I'm always open to interesting conversations — research collaborations, iOS projects, or just talking shop about systems engineering.</p>
+
+        <div class="contact-email-wrap">
+          <span class="contact-email" id="emailDisplay">axg@ucsd.edu</span>
+          <button class="btn-outline-sm" id="copyBtn" onclick="copyEmail()">Copy</button>
+        </div>
+        <div id="copyToast" class="copy-toast">Copied to clipboard!</div>
+
+        <div class="contact-socials">
+          <a href="https://github.com/akshatmadrock" target="_blank" class="contact-social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/akshatmadrock" target="_blank" class="contact-social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ FOOTER ════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">AG</div>
+      <div class="footer-links">
+        <a href="RESUME_AKSHAT_GUPTA_SUMMER_2026.pdf" target="_blank">Resume</a>
+        <a href="watch-wishlist.html">Watch Wishlist</a>
+        <a href="https://github.com/akshatmadrock" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/akshatmadrock" target="_blank">LinkedIn</a>
+      </div>
+      <div class="footer-copy">© 2026 Akshat Gupta · Built with vanilla HTML/CSS/JS</div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════ JS ════════════════════════════════════════ -->
+  <script>
+    // ── Nav scroll effect ──
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 80);
+    });
+
+    // ── Hamburger menu ──
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.classList.toggle('menu-open');
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.classList.remove('menu-open');
+      });
+    });
+
+    // ── Scroll reveal ──
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ── Active nav link ──
+    const sections = document.querySelectorAll('section[id]');
+    const navLinksAll = document.querySelectorAll('.nav-links a');
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinksAll.forEach(a => a.classList.remove('active'));
+          const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { threshold: 0.4 });
+    sections.forEach(s => navObserver.observe(s));
+
+    // ── Smooth scroll with offset ──
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 72;
+          window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ── Screenshot carousel ──
+    const carouselState = {};
+    function initCarousel(id) {
+      carouselState[id] = 0;
+    }
+    initCarousel('recover');
+
+    function carouselGoto(id, index) {
+      const track = document.getElementById('track-' + id);
+      const dots = document.querySelectorAll('#dots-' + id + ' .dot');
+      if (!track) return;
+      const slides = track.querySelectorAll('.carousel-slide');
+      index = (index + slides.length) % slides.length;
+      carouselState[id] = index;
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    }
+    function carouselNext(id) { carouselGoto(id, (carouselState[id] || 0) + 1); }
+    function carouselPrev(id) { carouselGoto(id, (carouselState[id] || 0) - 1); }
+
+    // ── Feature toggle ──
+    function toggleFeatures(id) {
+      const el = document.getElementById(id);
+      const btn = el.previousElementSibling.querySelector('button');
+      el.classList.toggle('hidden');
+      btn.textContent = el.classList.contains('hidden') ? 'Features ↓' : 'Features ↑';
+    }
+
+    // ── Email copy ──
+    function copyEmail() {
+      navigator.clipboard.writeText('axg@ucsd.edu').then(() => {
+        const toast = document.getElementById('copyToast');
+        const btn = document.getElementById('copyBtn');
+        btn.textContent = 'Copied!';
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+          btn.textContent = 'Copy';
+        }, 2000);
+      });
+    }
+  </script>
 </body>
 </html>
