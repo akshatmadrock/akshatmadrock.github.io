@@ -32,7 +32,7 @@
   --transition: 0.25s ease;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: var(--font-body);
@@ -85,6 +85,7 @@ h1, h2, h3, h4 {
   color: var(--text-dim);
   font-size: 1.05rem;
   max-width: 560px;
+  width: 100%;
 }
 
 .section-header { margin-bottom: 56px; }
@@ -1061,27 +1062,133 @@ footer {
 }
 
 /* ── RESPONSIVE ───────────────────────────────────────────────── */
+
+/* ─ Large tablet (≤900px) ──────────────────────────────────────── */
 @media (max-width: 900px) {
-  .projects-grid { grid-template-columns: repeat(2, 1fr); }
-  .skills-grid { grid-template-columns: repeat(2, 1fr); }
-  .edu-grid { grid-template-columns: 1fr; }
-  .awards-grid { grid-template-columns: 1fr; gap: 14px; }
-  .interests-grid { grid-template-columns: repeat(2, 1fr); }
-  .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  .projects-grid    { grid-template-columns: repeat(2, 1fr); }
+  .skills-grid      { grid-template-columns: repeat(2, 1fr); }
+  .edu-grid         { grid-template-columns: 1fr; }
+  .awards-grid      { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .interests-grid   { grid-template-columns: repeat(2, 1fr); }
+  .about-grid       { grid-template-columns: 1fr; gap: 36px; }
   .about-photo-wrap { margin: 0 auto; }
+  .app-card         { padding: 24px; }
 }
 
+/* ─ Tablet (≤768px) ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .section          { padding: 80px 0; }
+  .section-header   { margin-bottom: 40px; }
+  .nav-inner        { gap: 16px; }
+
+  .screenshot-carousel { min-height: 280px; }
+  .phone-mockup     { width: 140px; }
+
+  .timeline-content { padding: 20px 22px; }
+  .edu-card         { padding: 20px; }
+  .skill-group      { padding: 20px; }
+}
+
+/* ─ Mobile (≤640px) ────────────────────────────────────────────── */
 @media (max-width: 640px) {
-  .section { padding: 72px 0; }
-  .nav-links { display: none; }
-  .nav-subtle { display: none; }
-  .hamburger { display: flex; }
-  .btn-outline-sm { display: none; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .skills-grid { grid-template-columns: 1fr; }
-  .interests-grid { grid-template-columns: 1fr; }
-  .timeline-header { flex-direction: column; }
-  .hero-ctas { flex-direction: column; align-items: center; }
-  .footer-inner { flex-direction: column; align-items: flex-start; }
-  .footer-links { gap: 16px; }
+  :root             { --nav-h: 60px; }
+  .section          { padding: 60px 0; }
+  .container        { padding: 0 18px; }
+  .section-header   { margin-bottom: 32px; }
+
+  /* Nav */
+  .nav-links        { display: none; }
+  .nav-subtle       { display: none; }
+  .hamburger        { display: flex; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+  .btn-outline-sm   { display: none; }
+
+  /* Hero */
+  .hero-badge       { font-size: 0.72rem; padding: 5px 12px; border-radius: 8px; white-space: normal; text-align: center; max-width: 100%; }
+  .hero-pitch       { font-size: 1rem; }
+  .hero-ctas        { flex-direction: column; align-items: center; gap: 12px; }
+  .hero-ctas .btn-primary,
+  .hero-ctas .btn-outline { width: 100%; max-width: 280px; justify-content: center; }
+  .blob1            { width: 260px; height: 260px; }
+  .blob2            { width: 200px; height: 200px; }
+  .blob3            { width: 170px; height: 170px; }
+
+  /* About */
+  .about-photo-wrap { width: 180px; height: 180px; }
+  .about-photo      { width: 180px; height: 180px; }
+
+  /* Apps */
+  .app-card         { padding: 18px; }
+  .app-title        { font-size: 1.3rem; }
+  .app-card-header  { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .screenshot-carousel { min-height: 240px; }
+  .phone-mockup     { width: 120px; }
+  .carousel-btn     { width: 32px; height: 32px; font-size: 1rem; touch-action: manipulation; }
+
+  /* Projects */
+  .projects-grid    { grid-template-columns: 1fr; }
+
+  /* Timeline */
+  .timeline-header  { flex-direction: column; gap: 4px; }
+  .timeline-meta    { gap: 6px; }
+  .timeline-content { padding: 16px 18px; }
+
+  /* Skills */
+  .skills-grid      { grid-template-columns: 1fr; }
+
+  /* Awards */
+  .awards-grid      { grid-template-columns: 1fr; }
+
+  /* Interests — keep 2-col for compactness */
+  .interests-grid   { grid-template-columns: repeat(2, 1fr); }
+
+  /* Contact */
+  .contact-email-wrap { display: flex; width: 100%; justify-content: center; }
+  .contact-email    { font-size: 0.88rem; word-break: break-all; }
+  .contact-socials  { flex-wrap: wrap; justify-content: center; }
+
+  /* Footer */
+  .footer-inner     { flex-direction: column; align-items: flex-start; }
+  .footer-links     { gap: 12px; }
+}
+
+/* ─ Small mobile (≤480px) ──────────────────────────────────────── */
+@media (max-width: 480px) {
+  .section          { padding: 48px 0; }
+  .container        { padding: 0 16px; }
+
+  /* Hero */
+  .hero-pitch       { font-size: 0.95rem; }
+  .hero-pitch br    { display: none; }
+  .role             { font-size: 0.95rem; }
+
+  /* About */
+  .about-photo-wrap { width: 160px; height: 160px; }
+  .about-photo      { width: 160px; height: 160px; }
+
+  /* Apps */
+  .app-card         { padding: 16px; }
+  .app-title        { font-size: 1.15rem; }
+  .app-desc         { font-size: 0.88rem; }
+  .screenshot-carousel { min-height: 210px; }
+  .phone-mockup     { width: 105px; }
+
+  /* Timeline */
+  .timeline         { padding-left: 22px; }
+  .timeline-dot     { left: -18px; width: 10px; height: 10px; }
+  .timeline-content { padding: 14px 16px; }
+  .timeline-header h3  { font-size: 0.95rem; }
+  .timeline-bullets li { font-size: 0.85rem; }
+
+  /* Cards */
+  .skill-group      { padding: 16px; }
+  .award-card       { padding: 20px; }
+  .interest-card    { padding: 18px; }
+  .edu-card         { flex-direction: column; gap: 12px; padding: 16px; }
+  .edu-icon         { width: 40px; height: 40px; font-size: 0.75rem; }
+
+  /* Contact */
+  .contact-email    { font-size: 0.82rem; }
+
+  /* Buttons */
+  .btn-primary, .btn-outline { padding: 11px 20px; font-size: 0.9rem; }
 }
