@@ -1279,7 +1279,18 @@ footer {
   box-shadow: 0 0 0 3px var(--surface);
 }
 
-/* Smooth theme transition */
-*, *::before, *::after {
-  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.1s ease;
+/* Smooth theme transition — targeted only, not universal (avoids overriding opacity/transform) */
+html, body,
+#navbar, .mobile-menu,
+.section-tint,
+.nav-links a, .nav-logo, .nav-subtle,
+.hero-badge, .hero-name, .hero-pitch, .hero-roles,
+.btn-primary, .btn-outline, .btn-outline-sm, .btn-ghost-sm,
+.card, .app-card, .skill-group, .award-card, .interest-card,
+.edu-card, .timeline-content, .project-card,
+.tech-tag, .app-tag,
+.contact-email, .contact-social-btn,
+footer, .footer-logo {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.15s ease,
+              box-shadow 0.25s ease !important;
 }
