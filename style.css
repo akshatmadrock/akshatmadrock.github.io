@@ -1056,8 +1056,8 @@ footer {
 /* ─ Tablet (≤900px) ────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .hero-inner       { grid-template-columns: 1fr; gap: 48px; min-height: unset; }
-  .hero-photo-wrap  { order: -1; max-width: 320px; margin: 0 auto; }
-  .hero-photo-wrap::before { inset: 16px -16px -16px 16px; }
+  .hero-photo-wrap  { order: -1; max-width: 320px; margin: 0 auto; align-self: auto; }
+  .hero-photo-wrap::before { inset: 12px 0 -12px 12px; }
   .hero-photo       { height: 380px; }
   .hero-content     { max-width: 100%; }
   .projects-grid    { grid-template-columns: repeat(2, 1fr); }
@@ -1097,24 +1097,29 @@ footer {
   .btn-outline-sm   { display: none; }
 
   /* Hero */
-  .hero-inner       { padding-top: 16px; }
-  .hero-photo-wrap  { max-width: 260px; }
-  .hero-photo       { height: 320px; }
+  .hero-inner       { padding-top: 16px; gap: 32px; }
+  .hero-photo-wrap  { max-width: 240px; }
+  .hero-photo-wrap::before { content: none; }
+  .hero-photo       { height: 300px; }
   .hero-name        { letter-spacing: -0.03em; }
   .hero-pitch       { font-size: 1rem; }
   .hero-ctas        { flex-direction: column; align-items: flex-start; gap: 12px; }
   .hero-ctas .btn-primary,
   .hero-ctas .btn-outline { width: 100%; max-width: 280px; justify-content: center; }
+  .role             { white-space: normal; overflow-wrap: break-word; max-width: 100%; }
+  .hero-roles       { height: 52px; }
 
   /* About */
   .about-photo-wrap { max-width: 200px; }
   .about-photo      { height: 280px; }
 
   /* Apps */
-  .app-card         { padding: 18px; }
+  .apps-grid        { max-width: 100%; }
+  .app-card         { padding: 18px; overflow: hidden; }
   .app-title        { font-size: 1.3rem; }
   .app-card-header  { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .screenshot-carousel { min-height: 240px; }
+  .screenshot-carousel { min-height: 240px; width: 100%; }
+  .carousel-track   { width: 100%; }
   .phone-mockup     { width: 120px; }
   .carousel-btn     { width: 32px; height: 32px; font-size: 1rem; touch-action: manipulation; }
 
