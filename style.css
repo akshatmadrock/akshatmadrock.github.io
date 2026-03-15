@@ -1098,15 +1098,17 @@ footer {
 
   /* Hero */
   .hero-inner       { padding-top: 16px; gap: 32px; }
+  .hero-content     { text-align: center; }
   .hero-photo-wrap  { max-width: 240px; }
   .hero-photo-wrap::before { content: none; }
   .hero-photo       { height: 300px; }
   .hero-name        { letter-spacing: -0.03em; }
-  .hero-pitch       { font-size: 1rem; }
-  .hero-ctas        { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .hero-pitch       { font-size: 1rem; max-width: 100%; }
+  .hero-ctas        { flex-direction: column; align-items: center; gap: 12px; }
   .hero-ctas .btn-primary,
   .hero-ctas .btn-outline { width: 100%; max-width: 280px; justify-content: center; }
-  .role             { white-space: normal; overflow-wrap: break-word; max-width: 100%; }
+  .hero-socials     { justify-content: center; }
+  .role             { white-space: normal; overflow-wrap: break-word; width: 100%; text-align: center; left: 0; }
   .hero-roles       { height: 52px; }
 
   /* About */
